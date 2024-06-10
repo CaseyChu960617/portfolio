@@ -1,24 +1,25 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FRAMER_VARIANTS } from "@/lib/framer";
+import React from "react";
+
 import NavBar from "@/components/nav-bar";
 import ParticleContainer from "@/components/particle-container";
+import { FRAMER_VARIANTS } from "@/lib/framer";
 
-interface Props {
+interface IPrimaryLayoutProps {
   children?: any;
 }
 
-const PrimaryLayout: React.FC<Props> = ({ children }) => {
+const PrimaryLayout: React.FC<IPrimaryLayoutProps> = ({ children }) => {
   return (
     <>
       <motion.div
-        variants={FRAMER_VARIANTS}
-        initial="enter"
         animate="exit"
+        className="relative bg-radial-gradient"
+        initial="enter"
         transition={{
           duration: 1,
         }}
-        className="relative bg-radial-gradient"
+        variants={FRAMER_VARIANTS}
       >
         <ParticleContainer className="z-[50]" />
         <div className="absolute bottom-0 z-[60] aspect-[16/9] max-h-[500px] w-full bg-mountain-behind bg-contain"></div>

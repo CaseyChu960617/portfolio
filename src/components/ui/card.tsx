@@ -41,16 +41,14 @@ CardDescription.displayName = "CardDescription";
 
 const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} className={clsMerge("p-6 pt-0", className)} {...props} />
+    <div className={clsMerge("p-6 pt-0", className)} ref={ref} {...props} />
   ),
 );
 CardContent.displayName = "CardContent";
 
 const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div 
-    className={clsMerge("flex items-center p-6 pt-0", className)} 
-      ref={ref} {...props} />
+    <div className={clsMerge("flex items-center p-6 pt-0", className)} ref={ref} {...props} />
   ),
 );
 CardFooter.displayName = "CardFooter";

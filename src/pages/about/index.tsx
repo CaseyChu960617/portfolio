@@ -1,23 +1,24 @@
-import PrimaryLayout from "@/layouts/primary-layout";
-import { NextPageWithLayout } from "../page";
-import Container from "@/components/container";
 import { motion } from "framer-motion";
+
+import Container from "@/components/container";
+import PrimaryLayout from "@/layouts/primary-layout";
 import { FRAMER_VARIANTS } from "@/lib/framer";
+import { NextPageWithLayout } from "@/pages/page";
 
-type Props = {
+interface IABoutProps {
   // Add custom props here
-};
+}
 
-const AboutPage: NextPageWithLayout = () => {
+const AboutPage: NextPageWithLayout<IABoutProps> = () => {
   return (
     <motion.div
-      variants={FRAMER_VARIANTS}
-      initial="enter"
       animate="exit"
+      className="relative z-[100]"
+      initial="enter"
       transition={{
         duration: 1,
       }}
-      className="relative z-[100]"
+      variants={FRAMER_VARIANTS}
     >
       <Container className="mx-auto flex flex-col items-start gap-[40px]">
         <div className="text-sm font-bold md:text-md lg:text-xl">About Myself</div>

@@ -1,51 +1,45 @@
-import PrimaryLayout from "@/layouts/primary-layout";
-import { NextPageWithLayout } from "../page";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
 import Container from "@/components/container";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Code, Code2 } from "lucide-react";
-import { motion } from "framer-motion";
+import PrimaryLayout from "@/layouts/primary-layout";
 import { FRAMER_VARIANTS } from "@/lib/framer";
+import { NextPageWithLayout } from "@/pages/page";
 
-type Props = {
+interface IContactProps {
   // Add custom props here
-};
+}
 
-const ContactPage: NextPageWithLayout = () => {
+const ContactPage: NextPageWithLayout<IContactProps> = () => {
   return (
     <>
       <motion.div
-        variants={FRAMER_VARIANTS}
-        initial="enter"
         animate="exit"
+        className="relative z-[100]"
+        initial="enter"
         transition={{
           duration: 1,
         }}
-        className="relative z-[100]"
+        variants={FRAMER_VARIANTS}
       >
         <Container className="mx-auto flex flex-col items-start gap-[40px]">
           <div className="text-4xl">Contacts</div>
           <div className="text-2xl">Please feel free to contact me for any job opportunity</div>
           <div className="flex w-full flex-wrap gap-[10px]">
-            <Button variant={"outline"} className={"h-[60px]"}>
-              <Link href="/projects" className={"flex flex-row items-center gap-[10px]"}>
-                <Code className={"h-[30px] w-[30px]"} />
+            <Button className={"h-[60px]"} variant={"outline"}>
+              <Link className={"flex flex-row items-center gap-[10px]"} href="/projects">
                 <div>View Projects</div>
-                <Code2 className={"h-[30px] w-[30px]"} />
               </Link>
             </Button>
-            <Button variant={"outline"} className={"h-[60px]"}>
-              <Link href="/projects" className={"flex flex-row items-center gap-[10px]"}>
-                <Code className={"h-[30px] w-[30px]"} />
+            <Button className={"h-[60px]"} variant={"outline"}>
+              <Link className={"flex flex-row items-center gap-[10px]"} href="/projects">
                 <div>View Projects</div>
-                <Code2 className={"h-[30px] w-[30px]"} />
               </Link>
             </Button>
-            <Button variant={"outline"} className={"h-[60px]"}>
-              <Link href="/projects" className={"flex flex-row items-center gap-[10px]"}>
-                <Code className={"h-[30px] w-[30px]"} />
+            <Button className={"h-[60px]"} variant={"outline"}>
+              <Link className={"flex flex-row items-center gap-[10px]"} href="/projects">
                 <div>View Projects</div>
-                <Code2 className={"h-[30px] w-[30px]"} />
               </Link>
             </Button>
           </div>
